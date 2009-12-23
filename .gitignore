@@ -1,0 +1,4 @@
+mandelbrot
+*.cm[ixo]
+*.o
+.*

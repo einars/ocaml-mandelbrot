@@ -1,0 +1,28 @@
+Small and dumb Mandelbrot fractal browser in OCaml.
+---------------------------------------------------
+
+KEYS
+
+    h,j,k,l — move
+    z,x     — increase/decrease quality (calculation depth)
+    +,-     - zoom in/out
+    [,]     - zoom in/out
+
+
+REQUIREMENTS
+
+    ocaml
+
+
+INSTALLATION AND RUNNING
+
+    make
+    ./mandelbrot
+
+
+AUTHOR
+
+    Einar Lielmanis <einars@gmail.com>
+
+    http://spicausis.lv/
+    http://github.com/einars/
