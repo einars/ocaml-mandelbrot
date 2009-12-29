@@ -23,11 +23,7 @@ let iteration_count x0 y0 =
 
 let redraw () =
 
-    set_color (rgb 0x99 0x33 0x33);
-    fill_rect 5 5 10 10;
-    synchronize ();
 
-    auto_synchronize false;
     let zoom_c = !zoom /. float width in
     let offs_x = !ax -. !zoom /. 2.0 in
     let offs_y = !ay -. !zoom /. 2.0 in
@@ -52,15 +48,18 @@ let redraw () =
     set_color (rgb 0xdd 0xdd 0xdd);
     moveto 5 (width - 20);
     draw_string text;
-
-
-
     synchronize ()
+
 
 let main () =
 
     let window_size = sprintf " %dx%d" width height in
     open_graph window_size;
+
+    auto_synchronize false;
+
+    set_color (rgb 0x99 0x33 0x33);
+    fill_rect 5 5 10 10;
 
     let rec event_loop () = (
         redraw ();
