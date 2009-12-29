@@ -23,7 +23,13 @@ let iteration_count x0 y0 =
 
 let redraw () =
 
+    (* Draw "busy" marker *)
+    set_color (rgb 0x99 0x33 0x33);
+    fill_rect 5 5 10 10;
+    synchronize ();
 
+
+    (* Draw mandelbrot *)
     let zoom_c = !zoom /. float width in
     let offs_x = !ax -. !zoom /. 2.0 in
     let offs_y = !ay -. !zoom /. 2.0 in
@@ -57,9 +63,6 @@ let main () =
     open_graph window_size;
 
     auto_synchronize false;
-
-    set_color (rgb 0x99 0x33 0x33);
-    fill_rect 5 5 10 10;
 
     let rec event_loop () = (
         redraw ();
