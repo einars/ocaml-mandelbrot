@@ -70,8 +70,8 @@ let main () =
         match read_key () with
         | '=' | '+' | ']' -> zoom := !zoom /. 1.2;
         | '-' | '['       -> zoom := !zoom *. 1.2
-        | 'h'          -> ax := !ax -. bounce
-        | 'l'          -> ax := !ax +. bounce
+        | 'h'          -> ax := !ax +. bounce
+        | 'l'          -> ax := !ax -. bounce
         | 'j'          -> ay := !ay +. bounce
         | 'k'          -> ay := !ay -. bounce
         | 'z'          -> quality := max 1 (!quality - 5)
